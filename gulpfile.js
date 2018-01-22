@@ -2,13 +2,13 @@ const gulp = require('gulp'),
   sass = require('gulp-sass'),
   autoprefixer = require('gulp-autoprefixer');
   pug = require('gulp-pug');
+  browserSync = require('browser-sync'); 
 
 gulp.task('sass',() =>
   gulp.src('./src/scss/*.scss')
     .pipe(sass({
-      outputStyle: 'expanded',
-      sourceComments: true
-    }))
+      outputStyle: 'expanded'
+    })) 
     .pipe(autoprefixer({
       versions: ['last 2 browsers']
     }))
@@ -22,6 +22,8 @@ gulp.task('sass-min',() =>
   }))
   .pipe(gulp.dest('./build/css'))
 );
+
+gulp.task('sass-watch',['sass'], browserSync.reload);
 
 gulp.task('pug', () => 
   gulp.src('./src/views/*.pug')
@@ -40,6 +42,11 @@ gulp.task('pug-min', () =>
 );
 
 gulp.task('default', () => {
-  gulp.watch('./src/scss/*.scss', ['sass','sass-min'])
+  browserSync({ 
+    server: {
+      baseDir: './dist/'
+    }
+  });
+  gulp.watch('./src/scss/*.scss', ['sass-watch','sass-min'])
   gulp.watch('./src/views/*.pug', ['pug', 'pug-min'])
 })

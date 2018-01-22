@@ -1,9 +1,7 @@
-/* line 3, src/scss/styles.scss */
 body {
   background: red;
 }
 
-/* line 5, src/scss/styles.scss */
 body p {
   color: red;
   display: -webkit-box;
@@ -15,7 +13,7 @@ body p {
           flex-direction: column;
 }
 
-/* line 10, src/scss/styles.scss */
 body h1 {
   font-size: 3em;
+  color: purple;
 }
