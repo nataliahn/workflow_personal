@@ -1,0 +1,21 @@
+/* line 3, src/scss/styles.scss */
+body {
+  background: red;
+}
+
+/* line 5, src/scss/styles.scss */
+body p {
+  color: red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+/* line 10, src/scss/styles.scss */
+body h1 {
+  font-size: 3em;
+}
