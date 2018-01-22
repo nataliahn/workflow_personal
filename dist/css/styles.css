@@ -1,9 +1,9 @@
 body {
-  background: red;
+  background: #F2F1EF;
 }
 
 body p {
-  color: red;
+  color: #F2F1EF;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
