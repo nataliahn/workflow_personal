@@ -25,6 +25,8 @@ gulp.task('sass-min',() =>
 
 gulp.task('sass-watch',['sass'], browserSync.reload);
 
+
+
 gulp.task('pug', () => 
   gulp.src('./src/views/*.pug')
   .pipe(pug({
@@ -41,6 +43,8 @@ gulp.task('pug-min', () =>
   .pipe(gulp.dest('./build/'))
 );
 
+gulp.task('pug-watch',['pug'], browserSync.reload);
+
 gulp.task('default', () => {
   browserSync({ 
     server: {
@@ -48,5 +52,5 @@ gulp.task('default', () => {
     }
   });
   gulp.watch('./src/scss/*.scss', ['sass-watch','sass-min'])
-  gulp.watch('./src/views/*.pug', ['pug', 'pug-min'])
+  gulp.watch('./src/views/*.pug', ['pug-watch', 'pug-min'])
 })
