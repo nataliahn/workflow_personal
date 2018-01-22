@@ -17,3 +17,11 @@ body h1 {
   font-size: 3em;
   color: green;
 }
+
+footer {
+  background: red;
+  color: purple;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

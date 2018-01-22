@@ -9,13 +9,19 @@ html(lang='en')
     title #{pageTitle}
   body
 
-  article.col-md-6 
-    -var name = 'Estela'
-    h1 #{name}
+    include components/header
+  
+    article.col-md-6 
+      -var name = 'Estela'
+      h1 #{name}
 
-  article.col-md-6 
-    -var name2 = 'Pamela'
-    h1 #{name2}
+    article.col-md-6 
+      -var name2 = 'Pamela'
+      h1 #{name2}
+
+  include components/footer
+
+
    
     
 
